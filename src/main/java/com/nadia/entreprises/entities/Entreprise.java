@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.Email;
@@ -40,9 +39,6 @@ public class Entreprise {
 	@NotBlank(message = "L'email est obligatoire")
 	@Email(message = "L'email doit être valide")
 	private String email;
-
-	@ManyToOne(optional = true)
-	private Secteur secteur;
 
 	public Entreprise() {
 		super();
@@ -101,14 +97,6 @@ public class Entreprise {
 	public String toString() {
 		return "entreprise [idEnt=" + idEnt + ", nomEnt=" + nomEnt + ", chiffreAff=" + chiffreAff + ", dateCre="
 				+ dateCre + ", email=" + email + "]";
-	}
-
-	public Secteur getSecteur() {
-		return secteur;
-	}
-
-	public void setSecteur(Secteur secteur) {
-		this.secteur = secteur;
 	}
 
 }

@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import com.nadia.entreprises.entities.Entreprise;
-import com.nadia.entreprises.entities.Secteur;
 
 @SpringBootApplication
 public class EntreprisesApplication implements CommandLineRunner {
@@ -23,7 +22,7 @@ public class EntreprisesApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		repositoryRestConfiguration.exposeIdsFor(Entreprise.class, Secteur.class);
+		repositoryRestConfiguration.exposeIdsFor(Entreprise.class);
 	}
 
 	/*
